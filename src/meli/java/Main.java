@@ -51,5 +51,26 @@ public class Main {
         System.out.println(Arrays.toString(arr4));
 
 
+
+        // PUNTO 10
+        // Primero creamos array
+        Integer[] arr5 = new Integer[10000];
+        for (int x=0; x < arr5.length; x++) {
+            arr5[x] = (int) (Math.random()*1000)+1;
+        }
+
+        // Creamos el objeto para ordenar
+        Sorter s5 = (Sorter) MiFactory.getInstance("");
+        // Creamos el objeto para contar el tiempo
+        Time time = new Time();
+        System.out.println(Arrays.toString(arr5));
+        System.out.println("INICIO con algoritmo " + s5.getClass());
+        time.start();
+        s5.sort(arr5, c1);
+        time.stop();
+        System.out.println("FINAL");
+        System.out.println("Tiempo de ejecución: " + time.elapsedTime() + " milisegundos.");
+        System.out.println(Arrays.toString(arr5));
+
     }
 }
